@@ -2,13 +2,14 @@
 """a script that starts a Flask web application
 web application must be listening on 0.0.0.0, port 5000
 """
+
 from flask import Flask
 
 app = Flask("__name__")
 
 
 @app.route('/', strict_slashes=False)
-def display():
+def hello():
     """returns a string"""
     return "Hello HBNB!"
 
@@ -20,15 +21,15 @@ def hbnb():
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def hbnb(text):
+def Ctext(text):
     """returns a string"""
     return "C {}".format(text.replace("_", " "))
 
-
+@app.route('/python', strict_slashes=False)
 @app.route("/python/(<text>)", strict_slashes=False)
 def hbnb(text="is cool"):
     """returns a string"""
-    return "C {}".format(text.replace("_", " "))
+    return "Python {}".format(text.replace("_", " "))
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
