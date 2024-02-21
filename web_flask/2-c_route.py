@@ -18,11 +18,11 @@ def hbnb():
     return "HBNB"
 
 
+
 @app.route("/c/<text>", strict_slashes=False)
-def text(text):
+def display_text(text):
     """return a text"""
     return "c {}".format(text.replace("_", " "))
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
